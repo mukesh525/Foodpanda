@@ -24,15 +24,23 @@ export default class HomeView extends Component {
        style={styles.container}>
 
            <View style={{
-             flex: .5,
+             flex: 1,
+             width:200,
              flexDirection: 'column',
-             justifyContent: 'flex-start',
-             justifyContent:'center'
+             justifyContent:'center',
+             marginLeft:15
 
            }}>
-             <View style={{width: 150, height: 150, backgroundColor: 'powderblue'}} />
-
-              </View>
+           <Text style={{fontSize:35 ,color:'white',family: 'TeX Gyre Termes',fontWeight: "bold"}}>
+                 Food</Text>
+           <Text style={{marginTop:5,fontSize:45,color:'white',family: 'Arial',fontWeight: "bold"}}>
+                 Panda</Text>
+           <Text style={{marginTop:5,fontSize:10,color:'white',family: 'Open Sans' ,fontWeight: "bold"}}>
+                 WHAT A TWIST.</Text>
+           <Text style={{marginTop:5,fontSize:10,color:'white',family: 'Open Sans'}}>
+           The panda, the iconic long,slim slick of bread,has tradinally one of the most potebnt symbol of french culture.
+           </Text>
+           </View>
 
 
      </Image>

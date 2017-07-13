@@ -70,6 +70,10 @@
 		3F8A72FBB2B14E10BFC2E5D8 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44E436BFA4264B39B3DFF139 /* Roboto-Regular.ttf */; };
 		CC015D79AA5944E79F51CE4E /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CCCDCBEF92C41818F27F276 /* Roboto-Thin.ttf */; };
 		001AC3DD56184928937CFD42 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C42A555F3AA848B6BEF4E2DE /* Roboto-ThinItalic.ttf */; };
+		1570C5A4EACA49EA9481FF88 /* texgyretermes-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE45B4B6E1AB4871B6869770 /* texgyretermes-bold.otf */; };
+		1E2DF264C44F4B63BB2A8E41 /* texgyretermes-bolditalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0F7AA7ED6F243FEAA687B8D /* texgyretermes-bolditalic.otf */; };
+		2C9C6AC700D64E9181AC1B6B /* texgyretermes-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 008B9728BFAD44D09405F446 /* texgyretermes-italic.otf */; };
+		6037407B8A684077B3C6DFB0 /* texgyretermes-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF332A64A5ED46FD8276AEFD /* texgyretermes-regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -325,6 +329,10 @@
 		44E436BFA4264B39B3DFF139 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5CCCDCBEF92C41818F27F276 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; name = "Roboto-Thin.ttf"; path = "../assets/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C42A555F3AA848B6BEF4E2DE /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Roboto-ThinItalic.ttf"; path = "../assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FE45B4B6E1AB4871B6869770 /* texgyretermes-bold.otf */ = {isa = PBXFileReference; name = "texgyretermes-bold.otf"; path = "../assets/fonts/texgyretermes-bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C0F7AA7ED6F243FEAA687B8D /* texgyretermes-bolditalic.otf */ = {isa = PBXFileReference; name = "texgyretermes-bolditalic.otf"; path = "../assets/fonts/texgyretermes-bolditalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		008B9728BFAD44D09405F446 /* texgyretermes-italic.otf */ = {isa = PBXFileReference; name = "texgyretermes-italic.otf"; path = "../assets/fonts/texgyretermes-italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DF332A64A5ED46FD8276AEFD /* texgyretermes-regular.otf */ = {isa = PBXFileReference; name = "texgyretermes-regular.otf"; path = "../assets/fonts/texgyretermes-regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -593,6 +601,10 @@
 				44E436BFA4264B39B3DFF139 /* Roboto-Regular.ttf */,
 				5CCCDCBEF92C41818F27F276 /* Roboto-Thin.ttf */,
 				C42A555F3AA848B6BEF4E2DE /* Roboto-ThinItalic.ttf */,
+				FE45B4B6E1AB4871B6869770 /* texgyretermes-bold.otf */,
+				C0F7AA7ED6F243FEAA687B8D /* texgyretermes-bolditalic.otf */,
+				008B9728BFAD44D09405F446 /* texgyretermes-italic.otf */,
+				DF332A64A5ED46FD8276AEFD /* texgyretermes-regular.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -990,6 +1002,10 @@
 				3F8A72FBB2B14E10BFC2E5D8 /* Roboto-Regular.ttf in Resources */,
 				CC015D79AA5944E79F51CE4E /* Roboto-Thin.ttf in Resources */,
 				001AC3DD56184928937CFD42 /* Roboto-ThinItalic.ttf in Resources */,
+				1570C5A4EACA49EA9481FF88 /* texgyretermes-bold.otf in Resources */,
+				1E2DF264C44F4B63BB2A8E41 /* texgyretermes-bolditalic.otf in Resources */,
+				2C9C6AC700D64E9181AC1B6B /* texgyretermes-italic.otf in Resources */,
+				6037407B8A684077B3C6DFB0 /* texgyretermes-regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

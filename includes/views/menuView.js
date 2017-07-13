@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
+  Text,Image,
   StatusBar,TouchableHighlight,
   View
 } from 'react-native';
 import ImageSlider from 'react-native-image-slider';
 import GridView from 'react-native-gridview';
-const itemsPerRow = 3;
+const itemsPerRow = 2;
 
 
 // Use data from an array...
@@ -76,13 +76,30 @@ export default class MenuView extends Component {
                          renderItem={(item, sectionID, rowID, itemIndex, itemID) => {
                            return (
                              <TouchableHighlight underlayColor='#99d9f4' onPress={() => this.onLearnMore(record)}>
-                                  <View style ={styles.outerView}>
-                                     <View style={styles.innerView}>
-                                             <Text style={styles.title} > Group</Text>
-                                             <Text style={styles.title} >Status</Text>
-                                     </View>
+                                    <View style ={styles.outerView}>
+                                    <Image
+                                     style ={{width: 200,height: 100,resizeMode: 'contain'}}
+                                     source = {require('../image/imgmenu1.png')}/>
+                                     <Text style={{marginLeft:5,fontSize:12,color:'#A7A7A7' ,fontWeight: "bold"}}>
+                                           Truffles Ice $ Spice.</Text>
+                                    <Text style={{marginLeft:5,fontSize:10,color:'#A7A7A7',fontWeight: "bold"}}>
+                                                American Cafe.</Text>
 
-                                    <View style={styles.separator} />
+                                     <View style ={{flex :1,flexDirection: 'row',justifyContent: 'space-between',marginRight:5}}>
+                                     <Text style={{marginLeft:5,fontSize:10,color:'#F88311',fontWeight: "bold"}}>
+                                                Open Now</Text>
+                                     <View style ={{flexDirection: 'row'}}>
+                                             <Text style={{marginLeft:.5,fontSize:10,color:'#F88311',fontWeight: "bold"}}>
+                                                4.2</Text>
+                                             <Text style={{marginLeft:.5,fontSize:10,color:'#F88311',fontWeight: "bold"}}>
+                                                           **</Text>
+
+                                    </View>
+
+                                    </View>
+
+
+
                                  </View>
                              </TouchableHighlight>
                            );
@@ -125,14 +142,10 @@ const styles = StyleSheet.create({
 
     },
     outerView :{
-            marginTop:10,
-            marginLeft:10,
-            marginRight:10,
-            backgroundColor: 'powderblue',
-            padding :10,
+
+            backgroundColor: 'white',
             flex:1,
-            borderRadius: 8,
-            borderColor: '#000',
+            borderColor: 'white',
             borderWidth: 1
        }
 });

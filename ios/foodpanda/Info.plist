@@ -78,6 +78,10 @@
 		<string>Roboto-Regular.ttf</string>
 		<string>Roboto-Thin.ttf</string>
 		<string>Roboto-ThinItalic.ttf</string>
+		<string>texgyretermes-bold.otf</string>
+		<string>texgyretermes-bolditalic.otf</string>
+		<string>texgyretermes-italic.otf</string>
+		<string>texgyretermes-regular.otf</string>
 	</array>
 </dict>
 </plist>
