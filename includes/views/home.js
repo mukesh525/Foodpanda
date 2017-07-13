@@ -7,19 +7,84 @@ import {
     Text,
     View,
     StyleSheet,NavigatorIOS,
-    TouchableWithoutFeedback
+    TouchableWithoutFeedback,StatusBar
 } from "react-native";
 
 import Button from "apsl-react-native-button";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import {Hideo} from "react-native-textinput-effects";
-
+import { Toolbar, BottomNavigation, Icon1 } from 'react-native-material-ui';
+import Container from '../Container';
+import { TabRouter ,StackNavigator} from 'react-navigation';
+import { COLOR, ThemeProvider } from 'react-native-material-ui';
 import CommonStyle from "../styles/common.css";
 import Database from "../firebase/database";
 import DismissKeyboard from "dismissKeyboard";
 import { NavigationActions } from 'react-navigation'
 import Icon from 'react-native-vector-icons/EvilIcons';
 import TabNavigator from 'react-native-tab-navigator';
+
+ import HomeView from "./homeView";
+ import MenuView from "./menuView";
+ import NotificationView from "./notification";
+ import Orders from "./orders";
+
+ const TabRoute = TabRouter({
+   Home: { screen:HomeView },
+   Menu: { screen: MenuView },
+   Notify: { screen: NotificationView },
+   Order: {screen: Orders}
+   }, {
+     initialRouteName: 'Home',
+   }
+ );
+ const uiThemee = {
+  palette: {
+    primaryColor: COLOR.orange700,
+    accentColor: COLOR.pink500,
+  },
+  toolbar: {
+    container: {
+      height: 70,
+      paddingTop: 20
+    }
+  }
+}
+
+
+ class TabContentNavigator extends Component {
+     constructor(props, context) {
+     super(props, context);
+     console.log(props);
+     this.state = {
+       active: props.value.active,
+       key:props.value.key,
+
+     };
+   }
+
+   //this method will not get called first time
+   componentWillReceiveProps(newProps){
+    console.log(newProps);
+     this.setState({
+       active: newProps.value.active,
+       key: newProps.value.key,
+
+     });
+        //console.log(newProps);
+   }
+
+   render() {
+     const Component = TabRoute.getComponentForRouteName(this.state.active);
+     return <Component screenProps = {this.state}   method ={this.props.method} />;
+   }
+ }
+
+
+
+
+
+
 class Home extends Component {
 
   static navigationOptions = ({ navigation }) => {
@@ -29,12 +94,12 @@ class Home extends Component {
       headerStyle:{ backgroundColor: '#F67B00'},
       headerRight: (
         <View style = {{flexDirection:'row',flex:1,margin:10}}>
-         <Icon style = {{marginLeft:10 }}  color = '#FFF'    name = "cart" size={30}  />
+         <Icon style = {{marginLeft:10 }}  color = '#FFF' badgeText = "2"   name = "cart" size={30}  />
          <Icon style = {{marginLeft:10 }}  color = '#FFF'   name = "search" size={30}  />
        </View>
      ),
      headerLeft: (
-        <View style = {{flexDirection:'row',flex:1,alignItems:'center'}}>
+        <View style = {{flexDirection:'row',flex:1,alignItems:'center',marginRight:5}}>
         <Text style = {{color:'white',fontSize:12,fontweight:'bold'}}> We are happy to Serve you </Text>
      </View>
     ),
@@ -43,19 +108,15 @@ class Home extends Component {
 
 
 
-    constructor(props) {
-        super(props);
+  constructor(props){
+   super(props);
+   this.state = {
+   active:'Home',
+   key:'home',
+   };
 
-        this.state = {
-            uid: "",
-            mobile: "",
-            mobileForm: ""
-        };
-
-        this.logout = this.logout.bind(this);
-        this.saveMobile = this.saveMobile.bind(this);
-
-    }
+    this.logout = this.logout.bind(this);
+  }
 
     async logout() {
 
@@ -73,51 +134,57 @@ class Home extends Component {
 
     }
 
-    async componentDidMount() {
-
-        try {
-
-            // Get User Credentials
-            let user = await firebase.auth().currentUser;
-
-            // Listen for Mobile Changes
-            Database.listenUserMobile(user.uid, (mobileNumber) => {
-                this.setState({
-                    mobile: mobileNumber,
-                    mobileForm: mobileNumber
-                });
-            });
-
-            this.setState({
-                uid: user.uid
-            });
-
-        } catch (error) {
-            console.log(error);
-        }
-
-    }
-
-    saveMobile() {
-
-        // Set Mobile
-        if (this.state.uid && this.state.mobileForm) {
-            Database.setUserMobile(this.state.uid, this.state.mobileForm);
-            DismissKeyboard();
-        }
-
-    }
 
     render() {
 
         return (
-            <TouchableWithoutFeedback onPress={() => {DismissKeyboard()}}>
-                <View style={CommonStyle.container}>
-                    <Text style={styles.heading}>Hello UserId: {this.state.uid}</Text>
+          <ThemeProvider uiTheme={uiThemee}>
+            <Container>
 
+              <TabContentNavigator value = {this.state}  key = {this.state} method ={this._navigateTo} />
 
-                </View>
-            </TouchableWithoutFeedback>
+              <BottomNavigation active={this.state.active}
+                hidden={false}
+                style={{ container: { position: 'absolute', bottom: 0, left: 0, right: 0} }}
+              >
+
+                <BottomNavigation.Action
+                  key="home"
+                  icon="clear"
+                  label="Home"
+                  style={{ container: { minWidth: null } }}
+                  onPress={() => {
+                    this.setState({ active: 'Home', key:'home', });
+                  }}
+                />
+                <BottomNavigation.Action
+                  key="menu"
+                  icon="gps-fixed"
+                  label="Menu"
+                  style={{ container: { minWidth: null , flexShrink:2} }}
+                  onPress={() => this.setState({ active: 'Menu', key:'menu', })}
+                />
+
+                <BottomNavigation.Action
+                  key="notify"
+                  icon="games"
+                  label="Notify"
+                  style={{ container: { minWidth: null } }}
+                  onPress={() => this.setState({ active: 'Notify', key:'notify', })}
+                />
+                <BottomNavigation.Action
+                  key="order"
+                  icon="chat"
+                  label="Order"
+                  style={{ container: { minWidth: null } }}
+                  onPress={() => this.setState({ active: 'Order', key:'order', })}
+                />
+
+              </BottomNavigation>
+
+            </Container>
+          </ThemeProvider>
+
         );
     }
 }
