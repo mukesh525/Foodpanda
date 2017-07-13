@@ -146,8 +146,6 @@ class Home extends Component {
                                             <Image style={styles.button} source={require('../image/Order_Btn_nrm.png')}  />
 
 
-
-
         return (
           <ThemeProvider uiTheme={uiThemee}>
             <Container>
