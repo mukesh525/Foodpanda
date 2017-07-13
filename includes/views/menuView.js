@@ -11,21 +11,47 @@ import ImageSlider from 'react-native-image-slider';
 export default class MenuView extends Component {
   constructor(props, context) {
     super(props, context);
-    //console.log(props.response.empName);
+    this.state = {
+             position: 1,
+             interval: null
+         };
 
 
   }
+  componentWillMount() {
+        this.setState({interval: setInterval(() => {
+            this.setState({position: this.state.position === 2 ? 0 : this.state.position + 1});
+        }, 2000)});
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.state.interval);
+    }
+
 
   render() {
 
     return (
 
-      <ImageSlider images={[
-        'http://placeimg.com/640/480/any',
-        'http://placeimg.com/640/480/any',
-        'http://placeimg.com/640/480/any'
-    ]}/>
-   )
+      <View style = {{flex:.3,flexDirection:'column'}}>
+               <ImageSlider
+                   images={[
+                        require('../image/logo.jpg'),
+                        require('../image/logo.jpg'),
+                       require('../image/logo.jpg'),
+                   ]}
+                   position={this.state.position}
+                   onPositionChanged={position => this.setState({position})}/>
+
+                   <View style ={ {flex: .7, marginTop:10,backgroundColor:'red'}} >
+
+
+
+
+
+                   </View>
+           </View>
+    )
   }
 };
 
