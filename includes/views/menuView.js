@@ -3,7 +3,7 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  StatusBar,
+  StatusBar,TouchableHighlight,
   View
 } from 'react-native';
 import ImageSlider from 'react-native-image-slider';
@@ -62,9 +62,9 @@ export default class MenuView extends Component {
       <View style = {{flex:.3,flexDirection:'column'}}>
                <ImageSlider
                    images={[
-                        require('../image/logo.jpg'),
-                        require('../image/logo.jpg'),
-                        require('../image/logo.jpg'),
+                        require('../image/imgmenu1.png'),
+                        require('../image/imgmenu1.png'),
+                        require('../image/imgmenu1.png'),
                    ]}
                    position={this.state.position}
                    onPositionChanged={position => this.setState({position})}/>
@@ -75,9 +75,16 @@ export default class MenuView extends Component {
                          itemsPerRow={itemsPerRow}
                          renderItem={(item, sectionID, rowID, itemIndex, itemID) => {
                            return (
-                             <View style={{ flex: 1, backgroundColor: '#8F8', borderWidth: 1 }}>
-                               <Text>{`${item} (${sectionID}-${rowID}-${itemIndex}-${itemID})`}</Text>
-                             </View>
+                             <TouchableHighlight underlayColor='#99d9f4' onPress={() => this.onLearnMore(record)}>
+                                  <View style ={styles.outerView}>
+                                     <View style={styles.innerView}>
+                                             <Text style={styles.title} > Group</Text>
+                                             <Text style={styles.title} >Status</Text>
+                                     </View>
+
+                                    <View style={styles.separator} />
+                                 </View>
+                             </TouchableHighlight>
                            );
                          }}
                        />
@@ -111,4 +118,21 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+   innerView :{
+      marginTop:5,
+      flexDirection:'column',
+      justifyContent:'space-between'
+
+    },
+    outerView :{
+            marginTop:10,
+            marginLeft:10,
+            marginRight:10,
+            backgroundColor: 'powderblue',
+            padding :10,
+            flex:1,
+            borderRadius: 8,
+            borderColor: '#000',
+            borderWidth: 1
+       }
 });
