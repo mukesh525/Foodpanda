@@ -6,7 +6,7 @@ import {
     AppRegistry,
     TextInput,
     Text,
-    View,
+    View,Image,
     StyleSheet,
     dismissKeyboard,TouchableOpacity,
     TouchableWithoutFeedback
@@ -126,7 +126,9 @@ class Login extends Component {
 
         return (
             <TouchableWithoutFeedback onPress={() => {DismissKeyboard()}}>
-                <View style={CommonStyle.container}>
+            <Image
+             source = {require('../image/landing-page.png')}
+             style={styles.container}>
                     <View style={styles.formGroup}>
                         <Text style={styles.title}> FoodPanda</Text>
                         <Sae
@@ -152,7 +154,7 @@ class Login extends Component {
                             <Button onPress={this.signup} style={CommonStyle.buttons} textStyle={{fontSize: 18}}>
                                 Sign up
                             </Button>
-                            <Button onPress={this.login} style={styles.buttons} textStyle={{fontSize: 18}}>
+                            <Button onPress={this.login} style={CommonStyle.buttons} textStyle={{fontSize: 18}}>
                                 Login
                             </Button>
                         </View>
@@ -160,7 +162,7 @@ class Login extends Component {
                     <View>
                         <Text style={styles.response}>{this.state.response}</Text>
                     </View>
-                </View>
+                </Image>
             </TouchableWithoutFeedback>
         );
     }
@@ -171,11 +173,17 @@ const styles = StyleSheet.create({
     formGroup: {
         padding: 50
     },
+    container: {
+     flex: 1,
+     width: undefined,
+     height: undefined,
+     backgroundColor:'transparent',
 
+   },
     title: {
         paddingBottom: 16,
         textAlign: "center",
-        color: "#000",
+        color: "#fff",
         fontSize: 35,
         fontWeight: "bold",
         opacity: 0.8,

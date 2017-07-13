@@ -12,7 +12,7 @@ const Common = {
 
     buttons: {
         backgroundColor: "whitesmoke",
-        marginTop:50
+        marginTop:10
     }
 
 };
