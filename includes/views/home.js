@@ -5,8 +5,8 @@
 import React, {Component} from "react";
 import {
     Text,
-    View,
-    StyleSheet,NavigatorIOS,
+    View,TouchableHighlight,
+    StyleSheet,NavigatorIOS,Image,
     TouchableWithoutFeedback,StatusBar
 } from "react-native";
 
@@ -137,53 +137,65 @@ class Home extends Component {
 
     render() {
 
+      var HomeSelected = (this.state.key === 'home')? 'red':'white';
+      var MenuSelected = (this.state.key === 'menu') ? 'red':'white';
+      var NotifySelected = (this.state.key === 'notify') ? 'red':'white';
+      var OrderSelected = (this.state.key === 'order') ? 'red':'white';
+
+
+
         return (
           <ThemeProvider uiTheme={uiThemee}>
             <Container>
 
               <TabContentNavigator value = {this.state}  key = {this.state} method ={this._navigateTo} />
 
+              <BottomNavigation active={this.state.active} hidden={false}
+                style={{ container: { position: 'absolute', bottom: 0, left: 0, right: 0}, barBackgroundColor: '#FFF', }}
+               >
+
+                   <View style ={{flex:1,flexDirection:'row'}}>
+                   <View style ={{flex:.4,flexDirection:'row',alignItems :'center'}} >
+                       <Image style = {{margin:5,flex:1}} source = {require('../image/logo.jpg')} />
+                    </View>
+                    <View style ={{flex:.6,flexDirection:'row',justifyContent:'space-between',
+                          backgroundColor:'#EEE' }} >
+                      <View style ={{flex:1,flexDirection:'column',padding:5, alignItems :'center',
+                           backgroundColor: this.state.key === 'home' ? '#F67C01':'white'}}>
+                      <TouchableHighlight onPress= {() => this.setState({ active: 'Home', key:'home', })} >
+                         <Image style={styles.button} source={require('../image/home.png')}  />
+                        </TouchableHighlight>
+                        <Text style={{fontSize:10}}>Home</Text>
+                      </View>
+
+                      <View style ={{flex:1,flexDirection:'column',padding:5, alignItems :'center',
+
+                          backgroundColor: this.state.key === 'menu' ? '#F67C01':'white'}}>
+                          <TouchableHighlight   onPress={() => this.setState({ active: 'Menu', key:'menu', })} >
+                         <Image style={styles.button} source={require('../image/home.png')}  />
+                        </TouchableHighlight>
+                        <Text style={{fontSize:10}}>Menu</Text>
+                      </View>
+                      <View style ={{flex:1,flexDirection:'column',padding:5, alignItems :'center',
+                           backgroundColor: this.state.key === 'notify' ? '#F67C01':'white'}}>
 
 
-              <BottomNavigation active={this.state.active}
-                hidden={false}
-                style={{ container: { position: 'absolute', bottom: 0, left: 0, right: 0}, barBackgroundColor: '#EEEEEE', }}
-              >
+                         <TouchableHighlight onPress= {() => this.setState({ active: 'Notify', key:'notify', })} >
+                         <Image style={styles.button} source={require('../image/home.png')}  />
+                        </TouchableHighlight>
+                        <Text style={{fontSize:10}}>Notify</Text>
+                      </View>
+                      <View style ={{flex:1,flexDirection:'column',padding:5, alignItems :'center',
+                           backgroundColor: this.state.key === 'order' ? '#F67C01':'white'}}>
+                          <TouchableHighlight onPress={() => this.setState({ active: 'Order', key:'order', })} >
+                         <Image style={styles.button} source={require('../image/home.png')}  />
+                        </TouchableHighlight>
+                        <Text style={{fontSize:10}}>Order</Text>
+                      </View>
+                  </View>
+                </View>
+          </BottomNavigation>
 
-                <BottomNavigation.Action
-                  key="Home"
-                  icon="clear"
-                  label="Home"
-                  backgroundColor = "#000"
-                  style={{ container: { minWidth: null } }}
-                  onPress={() => {
-                    this.setState({ active: 'Home', key:'home', });
-                  }}
-                />
-                <BottomNavigation.Action
-                  key="Menu"
-                  icon="gps-fixed"
-                  label="Menu"
-                  style={{ container: { minWidth: null , flexShrink:2} }}
-                  onPress={() => this.setState({ active: 'Menu', key:'menu', })}
-                />
-
-                <BottomNavigation.Action
-                  key="Notify"
-                  icon="games"
-                  label="Notify"
-                  style={{ container: { minWidth: null } }}
-                  onPress={() => this.setState({ active: 'Notify', key:'notify', })}
-                />
-                <BottomNavigation.Action
-                  key="Order"
-                  icon="chat"
-                  label="Order"
-                  style={{ container: { minWidth: null },backgroundColor:"#000" }}
-                  onPress={() => this.setState({ active: 'Order', key:'order', })}
-                />
-
-              </BottomNavigation>
 
             </Container>
           </ThemeProvider>
@@ -191,6 +203,15 @@ class Home extends Component {
         );
     }
 }
+
+
+_onPressButton = (active:string,key:string) =>{
+
+
+
+}
+
+
 
 _navigateTo = (routeName: string) => {
      const actionToDispatch = NavigationActions.reset({
