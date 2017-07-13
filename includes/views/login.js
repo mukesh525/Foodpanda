@@ -196,6 +196,7 @@ const styles = StyleSheet.create({
     response: {
         textAlign: "center",
         paddingTop: 0,
+          color: "#fff",
         padding: 50
     }
 });
