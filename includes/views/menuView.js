@@ -6,6 +6,7 @@ import {
   StatusBar,
   View
 } from 'react-native';
+import ImageSlider from 'react-native-image-slider';
 
 export default class MenuView extends Component {
   constructor(props, context) {
@@ -18,12 +19,13 @@ export default class MenuView extends Component {
   render() {
 
     return (
-      <View style={styles.container}>
-          <Text style={styles.welcome}>
-            Welcome to Menu View
-          </Text>
-        </View>
-    );
+
+      <ImageSlider images={[
+        'http://placeimg.com/640/480/any',
+        'http://placeimg.com/640/480/any',
+        'http://placeimg.com/640/480/any'
+    ]}/>
+   )
   }
 };
 

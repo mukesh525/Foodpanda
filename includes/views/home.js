@@ -137,13 +137,6 @@ class Home extends Component {
 
     render() {
 
-      var HomeSelected = (this.state.key === 'home')? 'red':'white';
-      var MenuSelected = (this.state.key === 'menu') ? 'red':'white';
-      var NotifySelected = (this.state.key === 'notify') ? 'red':'white';
-      var OrderSelected = (this.state.key === 'order') ? 'red':'white';
-
-
-
         return (
           <ThemeProvider uiTheme={uiThemee}>
             <Container>
