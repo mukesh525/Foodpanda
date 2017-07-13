@@ -15,8 +15,9 @@
 
  Firebase.initialise();
  const foodpanda = StackNavigator({
-   Login: { screen: Login },
+
     Home: {screen: Home },
+    Login: { screen: Login },
 
    }, {
 

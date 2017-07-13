@@ -136,6 +136,17 @@ class Home extends Component {
 
 
     render() {
+        var HomeImage = this.state.key === 'home' ? <Image style={styles.button} source={require('../image/Home_Btn.png')}  /> :
+                                              <Image style={styles.button} source={require('../image/Home_Btn_nrm.png')}  />
+        var NotifyImage = this.state.key === 'notify' ? <Image style={styles.button} source={require('../image/Notifi_Btn.png')}  /> :
+                                             <Image style={styles.button} source={require('../image/Notifi_Btn_nrm.png')}  />
+        var MenuImage = this.state.key === 'menu' ? <Image style={styles.button} source={require('../image/Menu_Btn.png')}  /> :
+                                             <Image style={styles.button} source={require('../image/Menu_Btn_nrm.png')}  />
+        var OrderImage = this.state.key === 'order' ? <Image style={styles.button} source={require('../image/Order_Btn.png')}  /> :
+                                            <Image style={styles.button} source={require('../image/Order_Btn_nrm.png')}  />
+
+
+
 
         return (
           <ThemeProvider uiTheme={uiThemee}>
@@ -156,7 +167,7 @@ class Home extends Component {
                       <View style ={{flex:1,flexDirection:'column',padding:5, alignItems :'center',
                            backgroundColor: this.state.key === 'home' ? '#F67C01':'white'}}>
                       <TouchableHighlight onPress= {() => this.setState({ active: 'Home', key:'home', })} >
-                          <Image style={styles.button} source={require('../image/Home_Btn.png')}  />
+                            {HomeImage}
                         </TouchableHighlight>
 
                       </View>
@@ -165,7 +176,7 @@ class Home extends Component {
 
                           backgroundColor: this.state.key === 'menu' ? '#F67C01':'white'}}>
                           <TouchableHighlight   onPress={() => this.setState({ active: 'Menu', key:'menu', })} >
-                         <Image style={styles.button} source={require('../image/Menu_Btn_nrm.png')}  />
+                           {MenuImage}
                         </TouchableHighlight>
 
                       </View>
@@ -173,16 +184,14 @@ class Home extends Component {
                       <View style ={{flex:1,flexDirection:'column',padding:5, alignItems :'center',
                            backgroundColor: this.state.key === 'order' ? '#F67C01':'white'}}>
                           <TouchableHighlight onPress={() => this.setState({ active: 'Order', key:'order', })} >
-                         <Image style={styles.button} source={require('../image/Order_Btn_nrm.png')}  />
+                            {OrderImage}
                         </TouchableHighlight>
 
                       </View>
                       <View style ={{flex:1,flexDirection:'column',padding:5, alignItems :'center',
                            backgroundColor: this.state.key === 'notify' ? '#F67C01':'white'}}>
-
-
                          <TouchableHighlight onPress= {() => this.setState({ active: 'Notify', key:'notify', })} >
-                         <Image style={styles.button} source={require('../image/Notifi_Btn_nrm.png')}  />
+                         {NotifyImage}
                         </TouchableHighlight>
 
                       </View>
