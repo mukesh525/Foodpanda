@@ -62,9 +62,9 @@ export default class MenuView extends Component {
       <View style = {{flex:.3,flexDirection:'column'}}>
                <ImageSlider
                    images={[
-                        require('../image/imgmenu1.png'),
-                        require('../image/imgmenu1.png'),
-                        require('../image/imgmenu1.png'),
+                        require('../image/Head_Image.png'),
+                        require('../image/Head_Image.png'),
+                        require('../image/Head_Image.png'),
                    ]}
                    position={this.state.position}
                    onPositionChanged={position => this.setState({position})}/>
