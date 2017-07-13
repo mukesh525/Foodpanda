@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import ImageSlider from 'react-native-image-slider';
 import GridView from 'react-native-gridview';
+import Icon from "react-native-vector-icons/FontAwesome";
 const itemsPerRow = 2;
 
 
@@ -75,7 +76,7 @@ export default class MenuView extends Component {
                          itemsPerRow={itemsPerRow}
                          renderItem={(item, sectionID, rowID, itemIndex, itemID) => {
                            return (
-                             <TouchableHighlight underlayColor='#99d9f4' onPress={() => this.onLearnMore(record)}>
+                             <TouchableHighlight underlayColor='#99d9f4'>
                                     <View style ={styles.outerView}>
                                     <Image
                                      style ={{width: 200,height: 100,resizeMode: 'contain'}}
@@ -88,12 +89,10 @@ export default class MenuView extends Component {
                                      <View style ={{flex :1,flexDirection: 'row',justifyContent: 'space-between',marginRight:5}}>
                                      <Text style={{marginLeft:5,fontSize:10,color:'#F88311',fontWeight: "bold"}}>
                                                 Open Now</Text>
-                                     <View style ={{flexDirection: 'row'}}>
+                                     <View style ={{flexDirection: 'row',alignItems :'center'}}>
                                              <Text style={{marginLeft:.5,fontSize:10,color:'#F88311',fontWeight: "bold"}}>
                                                 4.2</Text>
-                                             <Text style={{marginLeft:.5,fontSize:10,color:'#F88311',fontWeight: "bold"}}>
-                                                           **</Text>
-
+                                              <Icon style = {{marginLeft:.5 }}  color = '#F88311'   name = "star-o" size={11}  />
                                     </View>
 
                                     </View>
