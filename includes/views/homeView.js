@@ -20,7 +20,7 @@ export default class HomeView extends Component {
     return (
       <View style={styles.container}>
           <Text style={styles.welcome}>
-            Welcome to Lead View
+            Welcome to HomeView View
           </Text>
         </View>
     );

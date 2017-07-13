@@ -20,7 +20,7 @@ export default class MenuView extends Component {
     return (
       <View style={styles.container}>
           <Text style={styles.welcome}>
-            Welcome to Lead View
+            Welcome to Menu View
           </Text>
         </View>
     );

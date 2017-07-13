@@ -111,8 +111,8 @@ class Home extends Component {
   constructor(props){
    super(props);
    this.state = {
-   active:'Home',
-   key:'home',
+      active:'Home',
+      key:'home',
    };
 
     this.logout = this.logout.bind(this);
@@ -143,22 +143,25 @@ class Home extends Component {
 
               <TabContentNavigator value = {this.state}  key = {this.state} method ={this._navigateTo} />
 
+
+
               <BottomNavigation active={this.state.active}
                 hidden={false}
-                style={{ container: { position: 'absolute', bottom: 0, left: 0, right: 0} }}
+                style={{ container: { position: 'absolute', bottom: 0, left: 0, right: 0}, barBackgroundColor: '#EEEEEE', }}
               >
 
                 <BottomNavigation.Action
-                  key="home"
+                  key="Home"
                   icon="clear"
                   label="Home"
+                  backgroundColor = "#000"
                   style={{ container: { minWidth: null } }}
                   onPress={() => {
                     this.setState({ active: 'Home', key:'home', });
                   }}
                 />
                 <BottomNavigation.Action
-                  key="menu"
+                  key="Menu"
                   icon="gps-fixed"
                   label="Menu"
                   style={{ container: { minWidth: null , flexShrink:2} }}
@@ -166,17 +169,17 @@ class Home extends Component {
                 />
 
                 <BottomNavigation.Action
-                  key="notify"
+                  key="Notify"
                   icon="games"
                   label="Notify"
                   style={{ container: { minWidth: null } }}
                   onPress={() => this.setState({ active: 'Notify', key:'notify', })}
                 />
                 <BottomNavigation.Action
-                  key="order"
+                  key="Order"
                   icon="chat"
                   label="Order"
-                  style={{ container: { minWidth: null } }}
+                  style={{ container: { minWidth: null },backgroundColor:"#000" }}
                   onPress={() => this.setState({ active: 'Order', key:'order', })}
                 />
 
