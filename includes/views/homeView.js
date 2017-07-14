@@ -31,13 +31,13 @@ export default class HomeView extends Component {
              marginLeft:15
 
            }}>
-           <Text style={{fontSize:35 ,color:'white',family: 'TeX Gyre Termes',fontWeight: "bold"}}>
+           <Text style={{fontSize:35 ,color:'white',fontWeight: "bold"}}>
                  Food</Text>
-           <Text style={{marginTop:5,fontSize:45,color:'white',family: 'Arial',fontWeight: "bold"}}>
+           <Text style={{marginTop:5,fontSize:45,color:'white',fontWeight: "bold"}}>
                  Panda</Text>
-           <Text style={{marginTop:5,fontSize:10,color:'white',family: 'Open Sans' ,fontWeight: "bold"}}>
+           <Text style={{marginTop:5,fontSize:10,color:'white',fontWeight: "bold"}}>
                  WHAT A TWIST.</Text>
-           <Text style={{marginTop:5,fontSize:10,color:'white',family: 'Open Sans'}}>
+           <Text style={{marginTop:5,fontSize:10,color:'white'}}>
            The panda, the iconic long,slim slick of bread,has tradinally one of the most potebnt symbol of french culture.
            </Text>
            </View>

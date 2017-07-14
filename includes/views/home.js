@@ -68,10 +68,7 @@ import TabNavigator from 'react-native-tab-navigator';
     console.log(newProps);
      this.setState({
        active: newProps.value.active,
-       key: newProps.value.key,
-
      });
-        //console.log(newProps);
    }
 
    render() {
@@ -100,7 +97,7 @@ class Home extends Component {
      ),
      headerLeft: (
         <View style = {{flexDirection:'row',flex:1,alignItems:'center',marginRight:5}}>
-        <Text style = {{color:'white',fontSize:12,fontweight:'bold'}}> We are happy to Serve you </Text>
+        <Text style = {{color:'white',fontSize:11,fontWeight:'bold'}}> We are happy to Serve you </Text>
      </View>
     ),
     };
@@ -112,7 +109,6 @@ class Home extends Component {
    super(props);
    this.state = {
       active:'Home',
-      key:'home',
    };
 
     this.logout = this.logout.bind(this);
@@ -136,13 +132,13 @@ class Home extends Component {
 
 
     render() {
-        var HomeImage = this.state.key === 'home' ? <Image style={styles.button} source={require('../image/Home_Btn.png')}  /> :
+        var HomeImage = this.state.active === 'Home' ? <Image style={styles.button} source={require('../image/Home_Btn.png')}  /> :
                                               <Image style={styles.button} source={require('../image/Home_Btn_nrm.png')}  />
-        var NotifyImage = this.state.key === 'notify' ? <Image style={styles.button} source={require('../image/Notifi_Btn.png')}  /> :
+        var NotifyImage = this.state.active === 'Notify' ? <Image style={styles.button} source={require('../image/Notifi_Btn.png')}  /> :
                                              <Image style={styles.button} source={require('../image/Notifi_Btn_nrm.png')}  />
-        var MenuImage = this.state.key === 'menu' ? <Image style={styles.button} source={require('../image/Menu_Btn.png')}  /> :
+        var MenuImage = this.state.active === 'Menu' ? <Image style={styles.button} source={require('../image/Menu_Btn.png')}  /> :
                                              <Image style={styles.button} source={require('../image/Menu_Btn_nrm.png')}  />
-        var OrderImage = this.state.key === 'order' ? <Image style={styles.button} source={require('../image/Order_Btn.png')}  /> :
+        var OrderImage = this.state.active === 'Order' ? <Image style={styles.button} source={require('../image/Order_Btn.png')}  /> :
                                             <Image style={styles.button} source={require('../image/Order_Btn_nrm.png')}  />
 
 
@@ -163,8 +159,8 @@ class Home extends Component {
                     <View style ={{flex:.6,flexDirection:'row',marginRight:5,justifyContent:'space-between',
                           backgroundColor:'#EEE' }} >
                       <View style ={{flex:1,flexDirection:'column',padding:5, alignItems :'center',
-                           backgroundColor: this.state.key === 'home' ? '#F67C01':'white'}}>
-                      <TouchableHighlight onPress= {() => this.setState({ active: 'Home', key:'home', })} >
+                           backgroundColor: this.state.active === 'Home' ? '#F67C01':'white'}}>
+                      <TouchableHighlight onPress= {() => this.setState({ active: 'Home', })} >
                             {HomeImage}
                         </TouchableHighlight>
 
@@ -172,23 +168,23 @@ class Home extends Component {
 
                       <View style ={{flex:1,flexDirection:'column',padding:5, alignItems :'center',
 
-                          backgroundColor: this.state.key === 'menu' ? '#F67C01':'white'}}>
-                          <TouchableHighlight   onPress={() => this.setState({ active: 'Menu', key:'menu', })} >
+                          backgroundColor: this.state.active === 'Menu' ? '#F67C01':'white'}}>
+                          <TouchableHighlight   onPress={() => this.setState({ active: 'Menu',})} >
                            {MenuImage}
                         </TouchableHighlight>
 
                       </View>
 
                       <View style ={{flex:1,flexDirection:'column',padding:5, alignItems :'center',
-                           backgroundColor: this.state.key === 'order' ? '#F67C01':'white'}}>
-                          <TouchableHighlight onPress={() => this.setState({ active: 'Order', key:'order', })} >
+                           backgroundColor: this.state.active === 'Order' ? '#F67C01':'white'}}>
+                          <TouchableHighlight onPress={() => this.setState({ active: 'Order',})} >
                             {OrderImage}
                         </TouchableHighlight>
 
                       </View>
                       <View style ={{flex:1,flexDirection:'column',padding:5, alignItems :'center',
-                           backgroundColor: this.state.key === 'notify' ? '#F67C01':'white'}}>
-                         <TouchableHighlight onPress= {() => this.setState({ active: 'Notify', key:'notify', })} >
+                           backgroundColor: this.state.active === 'Notify' ? '#F67C01':'white'}}>
+                         <TouchableHighlight onPress= {() => this.setState({ active: 'Notify',})} >
                          {NotifyImage}
                         </TouchableHighlight>
 
