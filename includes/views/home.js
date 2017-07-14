@@ -80,8 +80,6 @@ import TabNavigator from 'react-native-tab-navigator';
 
 
 
-
-
 class Home extends Component {
 
   static navigationOptions = ({ navigation }) => {
