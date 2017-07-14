@@ -45,7 +45,7 @@ export default class MenuView extends Component {
                    ]}
                    position={this.state.position}
                    onPositionChanged={position => this.setState({position})}/>
-                   <View style ={ {flex: .7, marginTop:10}} >
+                   <View style ={ {flex: .7, marginTop:15}} >
                    <GridView
                          data={Items}
                          dataSource={null}
