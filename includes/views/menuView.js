@@ -13,39 +13,6 @@ import { Items } from "../Data/data.js";
 const itemsPerRow = 2;
 
 
-
-
-
-
-// Use data from an array...
-// const data = Array(20)
-//   .fill(null)
-//   .map((item, index) => index + 1);
-//
-//
-//
-//   const randomData = [];
-//   for (let i = 0; i < items.length; i) {
-//     const endIndex = Math.max(Math.round(Math.random() * itemsPerRow), 1) + i;
-//     randomData.push(data.slice(i, endIndex));
-//     i = endIndex;
-//   }
-
-
-
-  //
-  // const dataSource = new GridView.DataSource({
-  //   rowHasChanged: (r1, r2) => r1 !== r2,
-  // }).cloneWithRows(randomData);
-
-
-
-
-
-
-
-
-
 export default class MenuView extends Component {
   constructor(props, context) {
     super(props, context);
@@ -53,9 +20,7 @@ export default class MenuView extends Component {
              position: 1,
              interval: null
          };
-   console.log(Items);
-
-  }
+   }
   componentWillMount() {
         this.setState({interval: setInterval(() => {
             this.setState({position: this.state.position === 2 ? 0 : this.state.position + 1});
