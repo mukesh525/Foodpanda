@@ -55,9 +55,9 @@ export default class MenuView extends Component {
                                    <TouchableHighlight underlayColor='#99d9f4'>
                                     <View style ={styles.outerView}>
                                     {<Image
-                                     style ={{width: 175,height: 100,resizeMode: 'contain'}}
+                                     style ={{width: 185,height: 69,resizeMode: 'contain'}}
                                      source = {item.image}/>}
-                                     <Text style={{marginLeft:5,fontSize:12,color:'#A7A7A7' ,fontWeight: "bold"}}>
+                                     <Text style={{marginLeft:5,marginTop:5,fontSize:12,color:'#A7A7A7' ,fontWeight: "bold"}}>
                                            {item.name}</Text>
                                     <Text style={{marginLeft:5,fontSize:10,color:'#A7A7A7',fontWeight: "bold"}}>
                                                 {item.desc}</Text>
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
 
     },
     outerView :{
-            margin:5,
+            margin:1,
             backgroundColor: 'white',
             flex:1,
             borderColor: 'white',

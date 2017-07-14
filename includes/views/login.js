@@ -130,7 +130,7 @@ class Login extends Component {
              source = {require('../image/landing-page.png')}
              style={styles.container}>
                     <View style={styles.formGroup}>
-                        <Text style={styles.title}> FoodPanda</Text>
+                        <Text style={styles.title}> Food Panda</Text>
                         <Sae
                             label={"Email Address"}
                             iconClass={FontAwesomeIcon}
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontSize: 35,
         fontWeight: "bold",
-        opacity: 0.8,
+        opacity: 0.9,
     },
 
     submit: {

@@ -9,7 +9,6 @@ import {
     StyleSheet,NavigatorIOS,Image,
     TouchableWithoutFeedback,StatusBar
 } from "react-native";
-
 import Button from "apsl-react-native-button";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import {Hideo} from "react-native-textinput-effects";
@@ -88,9 +87,9 @@ class Home extends Component {
       headerTitleStyle:{ color: 'white'},
       headerStyle:{ backgroundColor: '#F67B00'},
       headerRight: (
-        <View style = {{flexDirection:'row',flex:1,margin:10}}>
-         <Icon style = {{marginLeft:10 }}  color = '#FFF'  badgeCount = {2}  name = "cart" size={30}  />
-         <Icon style = {{marginLeft:10 }}  color = '#FFF'   name = "search" size={30}  />
+        <View style = {{flexDirection:'row',flex:1,margin:10,alignItems:'center'}}>
+        <Image style={{marginLeft:10}} source={require('../image/Cart.png')}  />
+        <Image style={{marginLeft:10}} source={require('../image/Search_21x21.png')}  />
        </View>
      ),
      headerLeft: (
