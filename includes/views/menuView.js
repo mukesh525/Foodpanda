@@ -68,7 +68,7 @@ export default class MenuView extends Component {
 
 
   render() {
-
+    //let image = {<Image style ={{width: 200,height: 100,resizeMode: 'contain'}} source = {require('../image/'+ )}/>}
     return (
 
       <View style = {{flex:.3,flexDirection:'column'}}>
@@ -85,13 +85,13 @@ export default class MenuView extends Component {
                          data={Items}
                          dataSource={null}
                          itemsPerRow={itemsPerRow}
-                         renderItem={(item, sectionID, rowID, itemIndex, itemID) => {
+                         renderItem={(item,itemIndex) => {
                            return (
                              <TouchableHighlight underlayColor='#99d9f4'>
                                     <View style ={styles.outerView}>
-                                    <Image
+                                    {<Image
                                      style ={{width: 200,height: 100,resizeMode: 'contain'}}
-                                     source = {require('../image/imgmenu1.png')}/>
+                                     source = {require('../image/imgmenu1.png')}/>}
                                      <Text style={{marginLeft:5,fontSize:12,color:'#A7A7A7' ,fontWeight: "bold"}}>
                                            {item.name}</Text>
                                     <Text style={{marginLeft:5,fontSize:10,color:'#A7A7A7',fontWeight: "bold"}}>
