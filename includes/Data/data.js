@@ -51,7 +51,7 @@ export const Items = [
   },
   {
     "name": "Moets Curry Leaf",
-    "desc": "North Indian,Seafood,Mutton,Chicken.",
+    "desc": "North Indian,Seafood,Chicken.",
     "status": "Open Now",
     "rating": "3.3",
       "image": require('../image/imgmenu8.png'),
