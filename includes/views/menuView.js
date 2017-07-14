@@ -73,8 +73,6 @@ export default class MenuView extends Component {
 
                                     </View>
 
-
-
                                  </View>
                              </TouchableHighlight>
                            );
