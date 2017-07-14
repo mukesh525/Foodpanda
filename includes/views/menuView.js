@@ -9,23 +9,34 @@ import {
 import ImageSlider from 'react-native-image-slider';
 import GridView from 'react-native-gridview';
 import Icon from "react-native-vector-icons/FontAwesome";
+import { Items } from "../Data/data.js";
 const itemsPerRow = 2;
 
 
-// Use data from an array...
-const data = Array(20)
-  .fill(null)
-  .map((item, index) => index + 1);
 
-  const randomData = [];
-  for (let i = 0; i < data.length; i) {
-    const endIndex = Math.max(Math.round(Math.random() * itemsPerRow), 1) + i;
-    randomData.push(data.slice(i, endIndex));
-    i = endIndex;
-  }
-  const dataSource = new GridView.DataSource({
-    rowHasChanged: (r1, r2) => r1 !== r2,
-  }).cloneWithRows(randomData);
+
+
+
+// Use data from an array...
+// const data = Array(20)
+//   .fill(null)
+//   .map((item, index) => index + 1);
+//
+//
+//
+//   const randomData = [];
+//   for (let i = 0; i < items.length; i) {
+//     const endIndex = Math.max(Math.round(Math.random() * itemsPerRow), 1) + i;
+//     randomData.push(data.slice(i, endIndex));
+//     i = endIndex;
+//   }
+
+
+
+  //
+  // const dataSource = new GridView.DataSource({
+  //   rowHasChanged: (r1, r2) => r1 !== r2,
+  // }).cloneWithRows(randomData);
 
 
 
@@ -42,7 +53,7 @@ export default class MenuView extends Component {
              position: 1,
              interval: null
          };
-
+   console.log(Items);
 
   }
   componentWillMount() {
@@ -71,7 +82,7 @@ export default class MenuView extends Component {
                    onPositionChanged={position => this.setState({position})}/>
                    <View style ={ {flex: .7, marginTop:10}} >
                    <GridView
-                         data={data}
+                         data={Items}
                          dataSource={null}
                          itemsPerRow={itemsPerRow}
                          renderItem={(item, sectionID, rowID, itemIndex, itemID) => {
@@ -82,16 +93,16 @@ export default class MenuView extends Component {
                                      style ={{width: 200,height: 100,resizeMode: 'contain'}}
                                      source = {require('../image/imgmenu1.png')}/>
                                      <Text style={{marginLeft:5,fontSize:12,color:'#A7A7A7' ,fontWeight: "bold"}}>
-                                           Truffles Ice $ Spice.</Text>
+                                           {item.name}</Text>
                                     <Text style={{marginLeft:5,fontSize:10,color:'#A7A7A7',fontWeight: "bold"}}>
-                                                American Cafe.</Text>
+                                                {item.desc}</Text>
 
                                      <View style ={{flex :1,flexDirection: 'row',justifyContent: 'space-between',marginRight:5}}>
                                      <Text style={{marginLeft:5,fontSize:10,color:'#F88311',fontWeight: "bold"}}>
-                                                Open Now</Text>
+                                                {item.status}</Text>
                                      <View style ={{flexDirection: 'row',alignItems :'center'}}>
                                              <Text style={{marginLeft:.5,fontSize:10,color:'#F88311',fontWeight: "bold"}}>
-                                                4.2</Text>
+                                                {item.rating}</Text>
                                               <Icon style = {{marginLeft:.5 }}  color = '#F88311'   name = "star-o" size={11}  />
                                     </View>
 
