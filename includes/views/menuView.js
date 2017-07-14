@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,Image,
+  Text,Image,Platform,
   StatusBar,TouchableHighlight,
   View
 } from 'react-native';
@@ -33,7 +33,6 @@ export default class MenuView extends Component {
 
 
   render() {
-    //let image = {<Image style ={{width: 200,height: 100,resizeMode: 'contain'}} source = {require('../image/'+ )}/>}
     return (
 
       <View style = {{flex:.3,flexDirection:'column'}}>
@@ -47,8 +46,10 @@ export default class MenuView extends Component {
                    onPositionChanged={position => this.setState({position})}/>
                    <View style ={ {flex: .7, marginTop:15}} >
                    <GridView
+                         contentContainerStyle={styles.contentContainer}
                          data={Items}
                          dataSource={null}
+                         automaticallyAdjustContentInsets={false}
                          itemsPerRow={itemsPerRow}
                          renderItem={(item,itemIndex) => {
                              return (
@@ -114,6 +115,9 @@ const styles = StyleSheet.create({
       justifyContent:'space-between'
 
     },
+    contentContainer: {
+     paddingBottom: (Platform.OS === 'ios') ? 60 : 70,
+   },
     outerView :{
             margin:1,
             backgroundColor: 'white',

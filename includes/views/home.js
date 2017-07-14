@@ -230,7 +230,8 @@ const styles = StyleSheet.create({
     form: {
         flexDirection:'column',
         paddingTop: 50
-    }
+    },
+    
 
 });
 
