@@ -51,12 +51,12 @@ export default class MenuView extends Component {
                          dataSource={null}
                          itemsPerRow={itemsPerRow}
                          renderItem={(item,itemIndex) => {
-                           return (
-                             <TouchableHighlight underlayColor='#99d9f4'>
+                             return (
+                                   <TouchableHighlight underlayColor='#99d9f4'>
                                     <View style ={styles.outerView}>
                                     {<Image
                                      style ={{width: 200,height: 100,resizeMode: 'contain'}}
-                                     source = {require('../image/imgmenu1.png')}/>}
+                                     source = {item.image}/>}
                                      <Text style={{marginLeft:5,fontSize:12,color:'#A7A7A7' ,fontWeight: "bold"}}>
                                            {item.name}</Text>
                                     <Text style={{marginLeft:5,fontSize:10,color:'#A7A7A7',fontWeight: "bold"}}>
