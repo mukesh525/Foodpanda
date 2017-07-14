@@ -91,7 +91,7 @@ class Home extends Component {
       headerStyle:{ backgroundColor: '#F67B00'},
       headerRight: (
         <View style = {{flexDirection:'row',flex:1,margin:10}}>
-         <Icon style = {{marginLeft:10 }}  color = '#FFF' badgeText = "2"   name = "cart" size={30}  />
+         <Icon style = {{marginLeft:10 }}  color = '#FFF'  badgeCount = {2}  name = "cart" size={30}  />
          <Icon style = {{marginLeft:10 }}  color = '#FFF'   name = "search" size={30}  />
        </View>
      ),
