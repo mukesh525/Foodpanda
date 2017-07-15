@@ -55,7 +55,7 @@ renderRecord(record) {
                       <Text style={styles.title} >{record.price}</Text>
                    </View>
                    <ListView
-                       style = {{backgroundColor:'white'}}
+                       style = {{backgroundColor:'transparent'}}
                        scrollEnabled={false}
                        contentInset={{bottom:30}}
                        automaticallyAdjustContentInsets={false}
@@ -72,7 +72,7 @@ renderRecord(record) {
    else if(record.type === 2) {
 
       return  (
-          <View style={{padding:5,flex:1,flexDirection:'row',justifyContent:"space-between",}}>
+          <View style={{adding:5,flex:1,flexDirection:'row',justifyContent:"space-between",}}>
              <View style={{padding:5,flex:.6,flexDirection:'column',alignItems:'flex-end'}}>
               <Text style={{flex:.3,marginTop :10,fontSize: 13,color:'#808080'}} >SUB TOTAL</Text>
               <Text style={{marginTop:10,fontSize: 13,color:'#808080'}} >SERVICE TAX</Text>
@@ -129,7 +129,7 @@ renderRecord(record) {
 
 rederItemView(item) {
  return (
-   <View style={{marginTop:5,padding:5,flex:1,flexDirection:'row',justifyContent:"space-between"}}>
+   <View style={{marginTop:6,backgroundColor:'white',padding:5,flex:1,flexDirection:'row',justifyContent:"space-between"}}>
          <Image style = {{flex:.085,width:55,height:55}}
              source = {item.image} />
 
