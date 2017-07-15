@@ -109,7 +109,7 @@ class Login extends Component {
     _navigateTo = (routeName: string) => {
          const actionToDispatch = NavigationActions.reset({
             index: 0,
-            actions: [NavigationActions.navigate({ routeName: routeName ,params: {}})]
+            actions: [NavigationActions.navigate({ routeName: routeName ,params: {title:'Home'}})]
           })
           this.props.navigation.dispatch(actionToDispatch)
          }
