@@ -65,7 +65,58 @@ renderRecord(record) {
              </View>
 
        );
-    } else {
+    }
+
+
+   else if(record.type === 2) {
+
+      return  (
+          <View style={{padding:5,flex:1,flexDirection:'row',justifyContent:"space-between",}}>
+             <View style={{padding:5,flex:.6,flexDirection:'column',alignItems:'flex-end'}}>
+              <Text style={{flex:.3,marginTop :10,fontSize: 13,color:'#808080'}} >SUB TOTAL</Text>
+              <Text style={{marginTop:10,fontSize: 13,color:'#808080'}} >SERVICE TAX</Text>
+            </View>
+            <View style={{padding:5,flex:.35,flexDirection:'column',alignItems:'flex-start'}}>
+             <Text style={{flex:.3,marginTop :10,fontSize: 13,color:'#808080'}} > {record.subtotal}</Text>
+             <Text style={{marginTop:10,fontSize: 13,color:'#808080',fontWeight: 'bold'}} > {record.servicetax} </Text>
+           </View>
+         </View>
+
+
+      );
+
+   }
+   else if(record.type === 3) {
+
+      return  (
+          <View style={{padding:5,flex:1,flexDirection:'row',justifyContent:"space-between"}}>
+             <View style={{padding:5,flex:.6,flexDirection:'column',alignItems:'flex-end'}}>
+              <Text style={{fontSize: 14,color:'#808080'}} > TOTAL</Text>
+              </View>
+            <View style={{padding:5,flex:.35,flexDirection:'column',alignItems:'flex-start',}}>
+                 <Text style={{fontSize: 14,color:'#808080',fontWeight: 'bold'}} > {record.total}</Text>
+                 <TouchableOpacity style ={{
+                       backgroundColor:'#F67C01',
+                       alignItems:'center',
+                       padding:10,
+                       marginTop :10,
+                       justifyContent:'center',
+                       width:130,
+                       height:30,
+                   }}>
+                     <Text style={{fontSize:10,color:'#FFF',}} > COMPLETE ORDER </Text>
+                </TouchableOpacity>
+
+
+            </View>
+         </View>
+
+
+      );
+
+   }
+
+    else {
           return <View/>;
 
     }
@@ -77,7 +128,7 @@ renderRecord(record) {
 
 rederItemView(item) {
  return (
-   <View style={{padding:5,flex:1,flexDirection:'row',justifyContent:"space-between"}}>
+   <View style={{marginTop:5,padding:5,flex:1,flexDirection:'row',justifyContent:"space-between"}}>
          <Image style = {{flex:.085,width:55,height:55}}
              source = {item.image} />
 
