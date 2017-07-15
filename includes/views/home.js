@@ -80,10 +80,10 @@ import TabNavigator from 'react-native-tab-navigator';
 
 
 class Home extends Component {
-
+  static active = 'home'
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Home',
+      title:'Home',
       headerTitleStyle:{ color: 'white'},
       headerStyle:{ backgroundColor: '#F67B00'},
       headerRight: (
@@ -231,7 +231,7 @@ const styles = StyleSheet.create({
         flexDirection:'column',
         paddingTop: 50
     },
-    
+
 
 });
 

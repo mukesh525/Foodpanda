@@ -113,20 +113,20 @@ export const Orders = [
   {
     "type":1,
     "group": "CAFE 5H BY THE KITCHEN",
-    "price": "$2.99",
+    "price": "$15.99",
     "items": [
           {
              "name": "Veg Mix Fried Rice ",
              "image": require('../image/imgmenu3.png'),
              "desc": "Lawrence Road. Casual Dining.",
-             "price":  "$2.99",
+             "price":  "$10.00",
              "quantity":1,
            },
            {
               "name": "Paneer Tikka",
               "image": require('../image/imgmenu4.png'),
               "desc": "American Cafe.",
-              "price":  "$2.99",
+              "price":  "$5.99",
               "quantity":1,
             }
          ]

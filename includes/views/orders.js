@@ -50,11 +50,12 @@ renderRecord(record) {
     if(record.type === 1){
     return (
              <View style ={styles.outerView}>
-                   <View style ={{backgroundColor:'#E4E3EB',alignItems:'center',paddingTop:5,paddingBottom:5,flexDirection:'row',justifyContent:"space-between"}}>
+                   <View style ={{backgroundColor:'transparent',alignItems:'center',paddingTop:5,paddingBottom:5,flexDirection:'row',justifyContent:"space-between"}}>
                       <Text style={styles.title} >{record.group}</Text>
                       <Text style={styles.title} >{record.price}</Text>
                    </View>
                    <ListView
+                       style = {{backgroundColor:'white'}}
                        scrollEnabled={false}
                        contentInset={{bottom:30}}
                        automaticallyAdjustContentInsets={false}
@@ -77,7 +78,7 @@ renderRecord(record) {
               <Text style={{marginTop:10,fontSize: 13,color:'#808080'}} >SERVICE TAX</Text>
             </View>
             <View style={{padding:5,flex:.35,flexDirection:'column',alignItems:'flex-start'}}>
-             <Text style={{flex:.3,marginTop :10,fontSize: 13,color:'#808080'}} > {record.subtotal}</Text>
+             <Text style={{flex:.3,marginTop :10,fontSize: 13,color:'#808080',fontWeight: 'bold'}} > {record.subtotal}</Text>
              <Text style={{marginTop:10,fontSize: 13,color:'#808080',fontWeight: 'bold'}} > {record.servicetax} </Text>
            </View>
          </View>
@@ -210,7 +211,7 @@ const styles = StyleSheet.create({
     outerView :{
 
             margin:5,
-            backgroundColor: '#F7F7F7',
+            backgroundColor: 'transparent',
             flex:1,
             borderColor: '#000',
 
