@@ -6,11 +6,11 @@ import {
   StatusBar,
   View
 } from 'react-native';
-
+import { Orders } from "../Data/data.js";
 export default class OrderView extends Component {
   constructor(props, context) {
     super(props, context);
-    //console.log(props.response.empName);
+    console.log(Orders);
 
 
   }

@@ -104,9 +104,10 @@ export const Orders = [
     "items": [
           {
              "name": "Truffles Ice $ Spice",
-             "image": require('../image/imgmenu2.png')
+             "image": require('../image/imgmenu2.png'),
              "desc": "American Cafe.",
              "price":  "$2.99",
+             "quantity":1,
            }
          ]
   },
