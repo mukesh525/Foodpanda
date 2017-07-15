@@ -20,7 +20,7 @@ export default class NotificationView extends Component {
     return (
       <View style={styles.container}>
           <Text style={styles.welcome}>
-            Welcome to NotificationView View
+            Welcome to Notification View
           </Text>
         </View>
     );
