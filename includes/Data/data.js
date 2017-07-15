@@ -98,29 +98,38 @@ export const Items = [
 export const Orders = [
   {
     "type":1,
-    "group": "Moets Curry Leaf",
-    "price": "Open Now",
-    "rating": "$2.99",
+    "group": "MOETS CURRY LEAF",
+    "price": "$2.99",
     "items": [
           {
              "name": "Truffles Ice $ Spice",
              "image": require('../image/imgmenu2.png'),
-             "desc": "American Cafe.",
+             "desc": "Lawrence Road. Casual Dining.",
              "price":  "$2.99",
              "quantity":1,
            }
          ]
   },
   {
-    "type":2,
-    "group": "Amount",
-    "subtotal": "$17.99",
-    "servicetax": "$1.00",
-  },
-  {
-    "type":3,
-    "group": "total",
-    "total": "$18.99",
+    "type":1,
+    "group": "CAFE 5H BY THE KITCHEN",
+    "price": "$2.99",
+    "items": [
+          {
+             "name": "Veg Mix Fried Rice ",
+             "image": require('../image/imgmenu3.png'),
+             "desc": "Lawrence Road. Casual Dining.",
+             "price":  "$2.99",
+             "quantity":1,
+           },
+           {
+              "name": "Paneer Tikka",
+              "image": require('../image/imgmenu4.png'),
+              "desc": "American Cafe.",
+              "price":  "$2.99",
+              "quantity":1,
+            }
+         ]
   },
   {
     "type":4,
@@ -148,6 +157,18 @@ export const Orders = [
         "image": require('../image/imgmenu1.png'),
       }
     ]
+  },
+  {
+    "type":2,
+    "group": "Amount",
+    "subtotal": "$17.99",
+    "servicetax": "$1.00",
+  },
+  {
+    "type":3,
+    "group": "total",
+    "total": "$18.99",
   }
+
 
 ];
