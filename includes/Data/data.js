@@ -93,3 +93,60 @@ export const Items = [
   },
 
 ];
+
+
+export const Orders = [
+  {
+    "type":1,
+    "group": "Moets Curry Leaf",
+    "price": "Open Now",
+    "rating": "$2.99",
+    "items": [
+          {
+             "name": "Truffles Ice $ Spice",
+             "image": require('../image/imgmenu2.png')
+             "desc": "American Cafe.",
+             "price":  "$2.99",
+           }
+         ]
+  },
+  {
+    "type":2,
+    "group": "Amount",
+    "subtotal": "$17.99",
+    "servicetax": "$1.00",
+  },
+  {
+    "type":3,
+    "group": "total",
+    "total": "$18.99",
+  },
+  {
+    "type":4,
+    "group": "You May Also Like",
+    "items": [
+      {
+        "name": "Truffles Ice $ Spice",
+        "desc": "American Cafe.",
+        "status": "Open Now",
+        "rating": "4.2",
+        "image": require('../image/imgmenu11.png'),
+      },
+      {
+        "name": "Beijing Bites",
+        "desc": "Lawrence Road. Casual Dining.",
+        "status": "Open Now",
+        "rating": "4.1",
+        "image": require('../image/imgmenu1.png'),
+      },
+      {
+        "name": "Truffles Ice $ Spice",
+        "desc": "American Cafe.",
+        "status": "Open Now",
+        "rating": "4.2",
+        "image": require('../image/imgmenu1.png'),
+      }
+    ]
+  }
+
+];
