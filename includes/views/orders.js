@@ -20,7 +20,7 @@ export default class OrderView extends Component {
     return (
       <View style={styles.container}>
           <Text style={styles.welcome}>
-            Welcome to OrderView View
+            Welcome to Order View
           </Text>
         </View>
     );

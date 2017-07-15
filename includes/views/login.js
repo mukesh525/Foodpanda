@@ -30,14 +30,10 @@ import Icon from 'react-native-vector-icons/SimpleLineIcons';
 class Login extends Component {
 
   static navigationOptions = {
-   headerRight: <Button title="Info" />,
   title: 'Login',
   headerStyle:{ backgroundColor: '#F67B00'},
   headerTitleStyle:{ color: 'white'},
   }
-
-
-
 
 
     constructor(props) {
