@@ -6,6 +6,7 @@ import {
   StatusBar,Image,TouchableOpacity,
   View
 } from 'react-native';
+import Icon from "react-native-vector-icons/FontAwesome";
 import UIStepper from 'react-native-ui-stepper';
 import { Orders } from "../Data/data.js";
 var ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 })
@@ -33,7 +34,7 @@ export default class OrderView extends Component {
    else {
    return (
       <ListView
-          contentInset={{bottom:30}}
+          contentInset={{bottom:60,}}
           automaticallyAdjustContentInsets={false}
           dataSource={this.state.dataSource}
           renderRow={this.renderRecord.bind(this)}
@@ -50,7 +51,7 @@ renderRecord(record) {
     if(record.type === 1){
     return (
              <View style ={styles.outerView}>
-                   <View style ={{backgroundColor:'transparent',alignItems:'center',paddingTop:5,paddingBottom:5,flexDirection:'row',justifyContent:"space-between"}}>
+                   <View style ={{backgroundColor:'transparent',alignItems:'center',paddingLeft:3,paddingTop:5,paddingBottom:5,flexDirection:'row',justifyContent:"space-between"}}>
                       <Text style={styles.title} >{record.group}</Text>
                       <Text style={styles.title} >{record.price}</Text>
                    </View>
@@ -72,7 +73,7 @@ renderRecord(record) {
    else if(record.type === 2) {
 
       return  (
-          <View style={{adding:5,flex:1,flexDirection:'row',justifyContent:"space-between",}}>
+          <View style={{padding:5,flex:1,flexDirection:'row',justifyContent:"space-between",}}>
              <View style={{padding:5,flex:.6,flexDirection:'column',alignItems:'flex-end'}}>
               <Text style={{flex:.3,marginTop :10,fontSize: 13,color:'#808080'}} >SUB TOTAL</Text>
               <Text style={{marginTop:10,fontSize: 13,color:'#808080'}} >SERVICE TAX</Text>
@@ -105,7 +106,7 @@ renderRecord(record) {
                        width:130,
                        height:30,
                    }}>
-                     <Text style={{fontSize:10,color:'#FFF',}} > COMPLETE ORDER </Text>
+                     <Text style={{fontSize:10,color:'#FFF',fontWeight: 'bold'}} > COMPLETE ORDER </Text>
                 </TouchableOpacity>
 
 
@@ -116,12 +117,71 @@ renderRecord(record) {
       );
 
    }
+   if(record.type === 4){
+    var itemDataSource = ds.cloneWithRows(record.items||[]);
+    return(
+      <View style={{padding:5,flex:1,flexDirection:'column',justifyContent:"space-between"}}>
+        <Text style={{flex:.07,fontSize: 14,color:'#808080'}} > {record.group}</Text>
+       <ListView
+          horizontal={true}
+          style={{flex:1,bottom:10}}
+          dataSource={itemDataSource}
+          renderRow={this.renderView.bind(this)}
+          />
+       </View>
+    );
+
+
+   }
 
     else {
           return <View/>;
 
     }
    }
+
+
+
+renderView(item) {
+
+return (
+        <View style ={{margin:5, paddingBottom:12, backgroundColor: 'white',flex:1}}>
+        {<Image
+         style ={{width: 185,height: 69,resizeMode: 'contain'}}
+         source = {item.image}/>}
+         <Text style={{marginLeft:5,marginTop:5,fontSize:12,color:'#A7A7A7' ,fontWeight: "bold"}}>
+               {item.name}</Text>
+        <Text style={{marginLeft:5,fontSize:10,color:'#A7A7A7',fontWeight: "bold"}}>
+                    {item.desc}</Text>
+
+         <View style ={{flex :1,flexDirection: 'row',justifyContent: 'space-between',marginRight:5}}>
+         <Text style={{marginLeft:5,fontSize:10,color:'#F88311',fontWeight: "bold"}}>
+                    {item.status}</Text>
+         <View style ={{flexDirection: 'row',alignItems :'center'}}>
+                 <Text style={{marginLeft:.5,fontSize:10,color:'#F88311',fontWeight: "bold"}}>
+                    {item.rating}</Text>
+                  <Icon style = {{marginLeft:.5 }}  color = '#F88311'   name = "star-o" size={11}  />
+        </View>
+
+  </View>
+
+</View>
+
+
+
+
+
+);
+
+
+}
+
+
+
+
+
+
+
 
 
 
@@ -134,10 +194,10 @@ rederItemView(item) {
              source = {item.image} />
 
          <View style={{flex:.2,flexDirection:'column',marginLeft:5,justifyContent:'flex-start'}}>
-               <Text style={{fontSize: 11,
+               <Text style={{fontSize: 12,
                color:'#808080',
                fontWeight: 'bold'}} >{item.name}</Text>
-               <Text style={{fontSize: 8,color:'#808080',}}>
+               <Text style={{fontSize:10,color:'#808080',}}>
                      {item.desc}</Text>
          </View>
          <View style={{margin:5,flexDirection:'row',justifyContent:'center',alignItems:'center'}}>

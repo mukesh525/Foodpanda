@@ -132,6 +132,17 @@ export const Orders = [
          ]
   },
   {
+    "type":2,
+    "group": "Amount",
+    "subtotal": "$17.99",
+    "servicetax": "$1.00",
+  },
+  {
+    "type":3,
+    "group": "total",
+    "total": "$18.99",
+  },
+  {
     "type":4,
     "group": "You May Also Like",
     "items": [
@@ -157,17 +168,6 @@ export const Orders = [
         "image": require('../image/imgmenu1.png'),
       }
     ]
-  },
-  {
-    "type":2,
-    "group": "Amount",
-    "subtotal": "$17.99",
-    "servicetax": "$1.00",
-  },
-  {
-    "type":3,
-    "group": "total",
-    "total": "$18.99",
   }
 
 
