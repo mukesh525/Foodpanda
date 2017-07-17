@@ -91,12 +91,7 @@ class Home extends Component {
         <Image style={{marginLeft:10}} source={require('../image/Cart.png')}  />
         <Image style={{marginLeft:10}} source={require('../image/Search_21x21.png')}  />
        </View>
-     ),
-     headerLeft: (
-        <View style = {{flexDirection:'row',flex:1,alignItems:'center',marginRight:5}}>
-        <Text style = {{color:'white',fontSize:11,fontWeight:'bold'}}> We are happy to Serve you </Text>
-     </View>
-    ),
+     )
     };
   };
 
