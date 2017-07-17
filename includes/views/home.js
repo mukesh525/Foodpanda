@@ -145,8 +145,8 @@ class Home extends Component {
                >
 
                    <View style ={{flex:1,flexDirection:'row'}}>
-                   <View style ={{flex:.4,flexDirection:'row',alignItems :'center'}} >
-                       <Image style = {{margin:5,flex:1}} source = {require('../image/Logo.jpg')} />
+                   <View style ={{flex:.2,flexDirection:'row',alignItems :'center'}} >
+                       <Image style = {{margin:5,flex:1,resizeMode:'contain'}} source = {require('../image/Logo.jpg')} />
                     </View>
                     <View style ={{flex:.6,flexDirection:'row',marginRight:5,justifyContent:'space-between',
                           backgroundColor:'#EEE' }} >

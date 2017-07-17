@@ -10,7 +10,10 @@ import ImageSlider from 'react-native-image-slider';
 import GridView from 'react-native-gridview';
 import Icon from "react-native-vector-icons/FontAwesome";
 import { Items } from "../Data/data.js";
-const itemsPerRow = 2;
+import Dimensions from 'Dimensions';
+
+var {height, width} = Dimensions.get('window');
+const itemsPerRow = 4;
 
 
 export default class MenuView extends Component {
@@ -56,7 +59,7 @@ export default class MenuView extends Component {
                                    <TouchableHighlight underlayColor='#99d9f4'>
                                     <View style ={styles.outerView}>
                                     {<Image
-                                     style ={{width: 185,height: 69,resizeMode: 'contain'}}
+                                     style ={{width: 185,height: 69,resizeMode: 'stretch'}}
                                      source = {item.image}/>}
                                      <Text style={{marginLeft:5,marginTop:5,fontSize:12,color:'#A7A7A7' ,fontWeight: "bold"}}>
                                            {item.name}</Text>
