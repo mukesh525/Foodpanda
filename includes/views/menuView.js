@@ -13,7 +13,8 @@ import { Items } from "../Data/data.js";
 import Dimensions from 'Dimensions';
 
 var {height, width} = Dimensions.get('window');
-const itemsPerRow = 4;
+var itemsPerRow = 4
+if (width > 400) {itemsPerRow = 4 } else {itemsPerRow = 2}
 
 
 export default class MenuView extends Component {
@@ -28,6 +29,7 @@ export default class MenuView extends Component {
         this.setState({interval: setInterval(() => {
             this.setState({position: this.state.position === 2 ? 0 : this.state.position + 1});
         }, 2000)});
+       if (this.width > 400) {this.itemsPerRow = 4 } else{ this.itemsPerRow = 2}
     }
 
     componentWillUnmount() {
@@ -59,10 +61,10 @@ export default class MenuView extends Component {
                                    <TouchableHighlight underlayColor='#99d9f4'>
                                     <View style ={styles.outerView}>
                                     {<Image
-                                     style ={{width: 185,height: 69,resizeMode: 'stretch'}}
+                                     style ={{width: 185,height: 69,resizeMode: 'contain'}}
                                      source = {item.image}/>}
                                      <Text style={{marginLeft:5,marginTop:5,fontSize:12,color:'#A7A7A7' ,fontWeight: "bold"}}>
-                                           {item.name}</Text>
+                                           {item.name} </Text>
                                     <Text style={{marginLeft:5,fontSize:10,color:'#A7A7A7',fontWeight: "bold"}}>
                                                 {item.desc}</Text>
 
