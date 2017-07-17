@@ -34,7 +34,7 @@ export default class OrderView extends Component {
    else {
    return (
       <ListView
-          contentInset={{bottom:60,}}
+          contentInset={{bottom:80,}}
           automaticallyAdjustContentInsets={false}
           dataSource={this.state.dataSource}
           renderRow={this.renderRecord.bind(this)}
